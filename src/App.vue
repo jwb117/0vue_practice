@@ -25,11 +25,11 @@
   </div>
 </div> -->
 
-<div class="start" v-bind:class="{end:tourView}">
-  
+<transition name="show">
+  <!-- <div class="start" v-bind:class="{end:tourView}"> -->
     <modal v-bind:tour="tour" v-bind:tourView="tourView" v-bind:listNum="listNum" @modalClose="tourView=false"></modal>
-  
-</div>
+    <!-- </div> -->
+  </transition>
 
 
 </template>
@@ -69,9 +69,10 @@ img{width: 100%;}
 .black-bg{width: 100%; position: fixed; background: rgba(0,0,0,0.7); top:0; height: 100%; display: flex; justify-content: center; align-items:center;}
 .white-bg{width: 80%; background: #fff; border-radius: 10px; padding: 20px;}
 
-.start{opacity:0; transition:1s;}
-.start.end{opacity:1;}
+/* .start{opacity:0; transition:1s;}
+.start.end{opacity:1;} */
 
-.close{opacity: 1; transition: 1s;}
-.close.end{opacity: 0;}
+ .show-enter-from,.show-leave-to{opacity:0;transform:translateY(1000px)}
+  .show-enter-active,.show-leave-active{transition:0.3s}
+  .show-enter-to,.show-leave-from{opacity:1;transform:translateY(0);}
 </style>
