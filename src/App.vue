@@ -73,6 +73,6 @@ img{width: 100%;}
 .start.end{opacity:1;} */
 
  .show-enter-from,.show-leave-to{opacity:0;transform:translateY(1000px)}
-  .show-enter-active,.show-leave-active{transition:0.3s}
+  .show-enter-active,.show-leave-active{transition:0.5s}
   .show-enter-to,.show-leave-from{opacity:1;transform:translateY(0);}
 </style>

@@ -1,7 +1,7 @@
 <template>
   
-<div class="black-bg" v-if="tourView == true"> 
-  <div class="white-bg">
+<div class="black-bg" v-if="tourView == true" v-on:click="$emit('modalClose')"> 
+  <div class="white-bg" v-on:click.stop.prevent="modalClose">
     <img v-bind:src="tour[listNum].image" alt="">
       <div>{{tour[listNum].title}}</div>
       <div>{{tour[listNum].price.toLocaleString()}}원</div>
